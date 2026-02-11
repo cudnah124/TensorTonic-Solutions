@@ -16,4 +16,4 @@ def bag_of_words_vector(tokens, vocab):
         if tokens[i] in vocab:
             count[tokens[i]] += 1
     
-    return np.asarray([count[i] for i in vocab])
+    return np.asarray([count[i] for i in vocab], dtype = int)
