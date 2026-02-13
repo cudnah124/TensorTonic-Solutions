@@ -25,19 +25,6 @@ def gru_cell_forward(x, h_prev, params):
     x, x_was_1d = _as2d(x, D)
     h_prev, h_was_1d = _as2d(h_prev, H)
 
-    if not isinstance(params, dict):
-        params = {
-            "Wz": np.random.randn(D, H),
-            "Uz": np.random.randn(H, H),
-            "bz": np.zeros(H),
-            "Wr": np.random.randn(D, H),
-            "Ur": np.random.randn(H, H),
-            "br": np.zeros(H),
-            "Wh": np.random.randn(D, H),
-            "Uh": np.random.randn(H, H),
-            "bh": np.zeros(H),
-        }
-
     z = _sigmoid(x @ params["Wz"] + h_prev @ params["Uz"] + params["bz"])
     r = _sigmoid(x @ params["Wr"] + h_prev @ params["Ur"] + params["br"])
 
