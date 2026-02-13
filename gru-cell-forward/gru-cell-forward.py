@@ -19,6 +19,7 @@ def gru_cell_forward(x, h_prev, params):
     # Write code here
     h_prev = np.array(h_prev, dtype=float)
     x = np.array(x, dtype= float)
+    
     D = x.shape[-1]
     H = h_prev.shape[-1]
 
