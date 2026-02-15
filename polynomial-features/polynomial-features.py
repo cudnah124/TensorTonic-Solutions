@@ -4,10 +4,11 @@ def polynomial_features(values, degree):
     """
     # Write code here
     poly = []
-    for value in values:
-      ap = []
-      for i in range(degree + 1):
-        ap.append(value ** i)
-      poly.append(ap)
-
+    for v in values:
+        row = [1]
+        cur = 1
+        for _ in range(degree):
+            cur *= v
+            row.append(cur)
+        poly.append(row)
     return poly
